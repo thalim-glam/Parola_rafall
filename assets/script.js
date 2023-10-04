@@ -6,10 +6,12 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var number = "0123456789";
 var specialChar = "!@#$%^&*()~+-|_=";
 var counter = "";
+var randPass = "";
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
+  
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -35,26 +37,26 @@ function generatePassword(){
         pass += lowerCase[Math.floor(Math.random() * lowerCase.length)];
         counter --;
         if (counter == 0) { break; }
-        console.log("lower + Counter =" + counter);
+//        console.log("Checking lower + Counter: " + counter);
       }
       
       if(uc){
         pass += upperCase[Math.floor(Math.random() * upperCase.length)];
         counter --;
         if (counter == 0) { break; }
-        console.log("upper + Counter =" + counter);
+//        console.log("Upper + Counter: " + counter);
       }
       if(num){
         pass += number[Math.floor(Math.random() * number.length)];
         counter --;
         if (counter == 0) { break; }
-        console.log("number + Counter =" + counter);
+//        console.log("Number + Counter: " + counter);
       }
       if(special){
         pass += specialChar[Math.floor(Math.random() * specialChar.length)];
         counter --;
         if (counter == 0) { break; }
-        console.log("Special + Counter =" + counter);
+//        console.log("Special + Counter: " + counter);
       }
       else if(!num && !lc && !uc && !special){
         return "You must select at least one type of character.";
@@ -62,10 +64,16 @@ function generatePassword(){
     }
   }
   else{
-    return "The Password must contain atleast 8 or at most 128 character";
+    return "Please choose a number between 8 and 128 ";
   }
+ 
+  console.log("Password in sequence : " + pass);
+  for (var j = 0; j < pass.length; j++){
+    randPass += pass[Math.floor(Math.random() * pass.length)];
+  }
+  console.log("Randomized password : " + randPass);
   
-  return pass;
+  return randPass;
 }
 
 // Add event listener to generate button
