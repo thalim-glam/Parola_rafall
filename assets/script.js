@@ -4,7 +4,7 @@ var passwordLength = "12";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var number = "0123456789";
-var specialChar = "!@#$%^&*()~+-|_=";
+var specialChar = "!@#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 var counter = "";
 var randPass = "";
 
