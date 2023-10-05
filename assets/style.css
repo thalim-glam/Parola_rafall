@@ -130,6 +130,22 @@ button[disabled] {
   }
 }
 
+footer {
+  background: #111;
+  padding: 6px 16px;
+  color: #888c8d;
+  text-align: center;
+}
+footer span a {
+  color: #ffea02;
+  text-decoration: none;
+}
+
+footer span a:hover {
+  text-decoration: underline;
+}
+
+
 @media (max-width: 500px) {
   .btn {
     font-size: 0.8rem;
