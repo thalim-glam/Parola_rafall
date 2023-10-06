@@ -6,14 +6,12 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var number = "0123456789";
 var specialChar = "!@#$%^&*()~+-|_=";
 var counter = "";
-var randPass = "";
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  
-  var passwordText = document.querySelector("#password");
 
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
   passwordText.value = password;
 
 }
@@ -22,6 +20,7 @@ function writePassword() {
 function generatePassword(){
 
   var pass = "";
+  var randPass = "";
   var passwordLength = window.prompt("How many characters would you like your password to contain. \n Please choose a number between 8 and 128.");
   var lc = window.confirm("Do you want lowercase letters?");
   var uc = window.confirm("Do you want uppercase letters?");
@@ -68,13 +67,14 @@ function generatePassword(){
   }
  
   console.log("Password in sequence : " + pass);
+ 
   for (var j = 0; j < pass.length; j++){
     randPass += pass[Math.floor(Math.random() * pass.length)];
   }
   console.log("Randomized password : " + randPass);
   
   return randPass;
-}
 
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
